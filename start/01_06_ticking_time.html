@@ -16,7 +16,16 @@
 
   <script>
     // Write your code here
-    
+    const clockElement = document.getElementById("clock");
+
+    function clock() {
+      return setInterval(() => {
+        let now = new Date();
+        clockElement.textContent = now.toLocaleTimeString();
+      }, 1000)
+    }
+    clock()
+
   </script>
 </body>
 

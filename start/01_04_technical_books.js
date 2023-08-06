@@ -31,3 +31,20 @@ class Book {
 }
 
 // Write your code here
+class TechnicalBook extends Book {
+  constructor(title, author, ISBN, numCopies, edition) {
+    super(title, author, ISBN, numCopies);
+    this._edition = edition;
+  }
+
+  get edition() {
+    return this.getEdition();
+  }
+
+  getEdition() {
+    return `The current version of this book is ${this._edition}`;
+  }
+}
+
+const metaethics = new TechnicalBook("Metaethics", "Andrew Fisher", 12345, 25, "4th")
+console.log(metaethics.edition)

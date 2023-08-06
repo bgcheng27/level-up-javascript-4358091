@@ -16,6 +16,26 @@
 
   <script>
     // Write your code here
+    function menuSet(vendors) {
+      const allMenus = vendors.flat();
+      const finalMenu = new Set(allMenus);
+
+      const menuList = document.querySelector("#combined-menu");
+      finalMenu.forEach((menuItem) => {
+        let itemElement = document.createElement("li");
+        itemElement.innerText = menuItem;
+        menuList.appendChild(itemElement);
+      })
+    }
+
+    const vendor1 = ["Pizza", "Pasta"];
+    const vendor2 = ["Pizza", "Calzones"];
+    const vendor3 = ["Lobster"];
+    const vendor4 = ["Calzones"];
+
+    menuSet([vendor1, vendor2, vendor3, vendor4])
+
+    
 
   </script>
 </body>
